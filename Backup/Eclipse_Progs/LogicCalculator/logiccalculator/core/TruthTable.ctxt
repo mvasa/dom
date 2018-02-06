@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=TruthTable
+comment0.text=\r\n\r\n\ @author\ chavez\r\n
+comment1.params=numAtoms
+comment1.target=TruthTable(int)
+comment1.text=
+comment2.params=
+comment2.target=boolean[][]\ getTruthTable()
+comment2.text=
+comment3.params=
+comment3.target=boolean[][]\ createTruthTable()
+comment3.text=
+comment4.params=tempMatrix\ cols
+comment4.target=boolean[][]\ createNewTruthTable(boolean[][],\ int)
+numComments=5

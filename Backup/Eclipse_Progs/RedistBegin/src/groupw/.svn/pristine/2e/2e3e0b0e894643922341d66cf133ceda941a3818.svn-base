@@ -1,0 +1,78 @@
+package groupw;
+
+import java.util.Arrays;
+
+/**
+ *
+ * @author chris_000
+ */
+public class NodeMap {
+    public Node[][] ArrayOfNode;
+    int height;
+    int width;
+    NodeMap(){
+       
+    }
+    NodeMap(int height, int width){ 
+         this.height=height+2;
+         this.width=width+2;
+         Node[][] ArrayOfNodes = new Node[this.height][this.width];
+         ArrayOfNode=ArrayOfNodes;
+         this.setBorders();
+         this.setInterior();
+    }    
+    
+    private void setBorders(){
+        for(int i=0;i<width;i++){
+            this.ArrayOfNode[i][0]=new Node(true);
+            this.ArrayOfNode[i][height-1]=new Node(true);
+        }
+        for(int i=0; i<height; i++){
+           this.ArrayOfNode[0][i]=new Node(true);
+           this.ArrayOfNode[width-1][i]=new Node(true);
+        }
+    }
+    
+    private void setInterior(){
+        for(int i=1;i<height-1;i++){
+            for(int j=1;j<width-1;j++){
+                this.ArrayOfNode[i][j]=new Node(false,1);
+            }
+        }
+    }
+  @Override
+  public String toString(){
+     return Arrays.toString(this.ArrayOfNode);
+  }
+  public void print(){
+      for(int j=0;j<height;j++){
+          for(int i=0;i<width;i++){
+              //System.out.print(this.ArrayOfNode[j][i]+" ");
+ 		  //assigns party to 1 or 0 depending on random number
+        	  //and prints 
+        	  if(Math.rint(Math.random()) == 1){
+        		  this.ArrayOfNode[j][i].setParty(1);
+        		  System.out.print("A" + this.ArrayOfNode[j][i].getParty() + " ");
+        	  }
+        	  else{
+        		  this.ArrayOfNode[j][i].setParty(0);
+        		  System.out.print("B" + this.ArrayOfNode[j][i].getParty() + " ");
+        	  }
+
+              
+          }
+          System.out.println("");
+      }
+  }
+  
+  public boolean isEdge(NodePoint point ){
+        return this.ArrayOfNode[point.height][point.width].isEdge();
+      }
+  public boolean isMarked(NodePoint point){
+      return this.ArrayOfNode[point.height][point.width].isMarked();
+  }
+  public void setDistrct(NodePoint point, int dist){
+      this.ArrayOfNode[point.height][point.width].setDirsting(dist);
+  }
+
+}

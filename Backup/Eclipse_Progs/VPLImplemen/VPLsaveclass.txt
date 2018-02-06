@@ -1,0 +1,69 @@
+ ˛∫æ   4K
+ _ – — “	 ” ‘
+  ’
+  ÷	 ” ◊ ÿ
+ Ÿ ⁄
+  €	  ‹ ›
+  ﬁ ﬂ
+  – ‡
+  – ·
+  ‚ „
+  ‰
+ Ÿ Â Ê
+  ﬁ
+  Á
+  Ë
+ È Í Î Ï
+  Ì
+  Ó	  Ô
+  
+  Ò
+  Ú	  Û	  Ù ı
+  ˆ	  ˜	  ¯	  ˘	  ˙	  ˚	  ¸ ˝	  ˛ ˇ
+ ” 
+ Ÿ
+ Ÿ
+ 		 
+
+ : ﬁ
+ 9
+ 9 Â?Ù      ?¥z·GÆ{?Ÿôôôôôö
+ @        !"
+ 9#$ max I ConstantValue  ' mem [I ip bp sp rv hp 	numPassed gp fileName Ljava/lang/String; texShots noopCode     	labelCode    callCode    passCode    	allocCode    
+returnCode    getRetvalCode    jumpCode    condJumpCode    addCode   	 subCode   
+ multCode    divCode    remCode    	equalCode    notEqualCode    lessCode    lessEqualCode    andCode    orCode    notCode    oppCode    litCode    copyCode    getCode    putCode    haltCode    	inputCode    
+outputCode    newlineCode    
+symbolCode    newCode    allocGlobalCode     toGlobalCode   ! fromGlobalCode   " 	debugCode   # <init> ()V Code LineNumberTable main ([Ljava/lang/String;)V StackMapTable% — ﬂ& Ê 
+Exceptions' numArgs (I)I showMem (II)V generatePiCTeX (I)V <clinit> 
+SourceFile VPL.java ∏ π java/io/BufferedReader java/io/InputStreamReader()* ∏+ ∏,-. +enter name of file containing VPL program: /0123 m n java/io/FileReader ∏1 java/util/ArrayList java/lang/StringBuilder parsing line [45 ]6371 java/util/StringTokenizer89:3;<= VPL IntPair ∏ …>? d e ∆ «@9ABC aD a after replacing labels: » … g a h a f a i a j a k a Code is  l a 
+Halting.......E À ? 0 À  0F Fatal error: unknown opcode [4G :  java/io/PrintWriter java/io/FileWriter o a .tex ∏H TeX output  
+ has sp =  % .tex: \input pictex \medskip \beginpicture 3\setcoordinatesystem units <0.4true in, 0.4true in> \putrectangle corners at 4I    and  \put {$ $} at  
+$} [b] at  \put {\tt ip} [b] at  \put {\tt bp} [b] at  \put {\tt sp} [b] at  \endpicture
+
+ \vfil\eject \endpicture \vfil\eject\byeJ π java/lang/Object [Ljava/lang/String; java/lang/String java/lang/Exception java/lang/System in Ljava/io/InputStream; (Ljava/io/InputStream;)V (Ljava/io/Reader;)V out Ljava/io/PrintStream; java/io/PrintStream print (Ljava/lang/String;)V readLine ()Ljava/lang/String; append -(Ljava/lang/String;)Ljava/lang/StringBuilder; toString println countTokens ()I 	nextToken java/lang/Integer parseInt (Ljava/lang/String;)I add (Ljava/lang/Object;)Z size get (I)Ljava/lang/Object; second first exit (C)V (I)Ljava/lang/StringBuilder; (Ljava/io/Writer;)V (D)Ljava/lang/StringBuilder; close !  _   /  ` a  b    c  d e    f a    g a    h a    i a    j a    k a    l a    m n    o a    p a  b    q  r a  b    s  t a  b    u  v a  b    w  x a  b    y  z a  b    {  | a  b    }  ~ a  b      Ä a  b    Å  Ç a  b    É  Ñ a  b    Ö  Ü a  b    á  à a  b    â  ä a  b    ã  å a  b    ç  é a  b    è  ê a  b    ë  í a  b    ì  î a  b    ï  ñ a  b    ó  ò a  b    ô  ö a  b    õ  ú a  b    ù  û a  b    ü  † a  b    °  ¢ a  b    £  § a  b    •  ¶ a  b    ß  ® a  b    ©  ™ a  b    ´  ¨ a  b    ≠  Æ a  b    Ø  ∞ a  b    ±  ≤ a  b    ≥  ¥ a  b    µ  ∂ a  b    ∑   ∏ π  ∫        *∑ ±    ª        	 º Ω  ∫  ¯    Mª Yª Y≤ ∑ ∑ L≤ ∂ 	+∂ 
+≥ ª Yª Y≤ ∑ ∑ Mª Y∑ :ª Y∑ :6	,∂ 
+N≤ ª Y∑ ∂ -∂ ∂ ∂ ∂ -∆ ¨ª Y-∑ :∂ û ö∂ ∏ 6† !∂ ∏ 6ª Y	∑ ∂ Wß l≤  	OÑ	ü ü 
+† )∂ ∏ 6≤  	Oª Y	∑ ∂ WÑ	6
+
+∏ !¢ ≤  	∂ ∏ OÑ	Ñ
+ßˇ‚-«ˇ/6∂ "¢ b∂ #¿ ¥ $66
+6∂ "¢ *∂ #¿ ¥ %† ∂ #¿ ¥ $6
+Ñßˇ“≤  ∂ #¿ ¥ %
+OÑßˇö≤ &∂ 	d∏ '	≥ (	`≥ )≥ *≥ +'≥ ,≥ -≤ (d6≤ .∂ ∏ '`≥ /6666≤  ≤ *.6≤ *`≥ *6˛6˝6ü ü 
+† ∏ !`6ß 
+∏ !6† ≤  ≤ *.6≤ *`≥ *ß g† (≤  ≤ *.6≤ *`≥ *≤  ≤ *.6≤ *`≥ *ß <† 6≤  ≤ *.6≤ *`≥ *≤  ≤ *.6≤ *`≥ *≤  ≤ *.6≤ *`≥ *ö ß£† 7≤  ≤ )≤ (O≤  ≤ )`≤ *O≤ )≥ (≤ )≤ -``≥ )≥ *≥ -ßi† '≤  ≤ )≤ -``≤  ≤ (``.O≤ -`≥ -ß?† ≤ )`≥ )ß-† 1≤  ≤ (``.≥ +≤  ≤ (`.≥ *≤ (≥ )≤  ≤ (.≥ (ß˘† ≤  ≤ (``≤ +Oß‡† ≥ *ß—† ≤  ≤ (``.ôª≥ *ß≥	† +≤  ≤ (``≤  ≤ (``.≤  ≤ (``.`OßÑ
+† +≤  ≤ (``≤  ≤ (``.≤  ≤ (``.dOßU† +≤  ≤ (``≤  ≤ (``.≤  ≤ (``.hOß&† +≤  ≤ (``≤  ≤ (``.≤  ≤ (``.lOß˜† +≤  ≤ (``≤  ≤ (``.≤  ≤ (``.pOß»† >≤  ≤ (``.≤  ≤ (``.† ≤  ≤ (``Oßñ≤  ≤ (``OßÜ† >≤  ≤ (``.≤  ≤ (``.ü ≤  ≤ (``OßT≤  ≤ (``OßD† >≤  ≤ (``.≤  ≤ (``.¢ ≤  ≤ (``Oß≤  ≤ (``Oß† >≤  ≤ (``.≤  ≤ (``.£ ≤  ≤ (``Oß–≤  ≤ (``Oß¿† A≤  ≤ (``.ô "≤  ≤ (``.ô ≤  ≤ (``Oßã≤  ≤ (``Oß{† A≤  ≤ (``.ö ≤  ≤ (``.ô ≤  ≤ (``OßF≤  ≤ (``Oß6† 2≤  ≤ (``.ô ≤  ≤ (``Oß≤  ≤ (``Oß † ≤  ≤ (``≤  ≤ (``.tOß›† ≤  ≤ (``Oß≈† ≤  ≤ (``≤  ≤ (``.Oß£† /≤  ≤ (``≤  ≤  ≤ (``.≤  ≤ (``.`.Oßp† /≤  ≤  ≤ (``.≤  ≤ (``.`≤  ≤ (``.Oß=† ≤ 0∂ ∏ 1ß'† !≤ 2∂ 	≤  ≤ (``+∂ 
+∏ Oß† ≤ ≤  ≤ (``.∂ 3ß Ê† ≤ 4∂ ß ‘† ≤ ≤  ≤ (``.í∂ 5ß ∑† (≤ ,≤  ≤ (``.d≥ ,≤  ≤ (``≤ ,Oß ã † ≤ /`≥ (≤ (`≥ )ß p!† ≤  ≤ /`≤  ≤ (``.Oß P"† ≤  ≤ (``≤  ≤ /`.Oß 0#† ß &≤ ª Y∑ 6∂ ∂ 7∂ ∂ ∂ ∏ 1ô˘ï±    ª  r ú        !  3  <  E   H " M # k $ o & y ' Å * ã . ë 0 õ 1 Ø 5 ∫ 7 Œ : ÿ ; Ò < Ù @ B C @ J Q) S8 T; UH VZ Wi Uo XÇ Qà [ê \ò _≤ `∂ bΩ d≈ eÀ g“ j’ kﬁ Ô Å˙ Ñ á ä! å' ç; éA èf êl ëü ìß ñ≠ ò∑ ô√ ö… õ’ ú⁄ ù· üÁ °  ¢ § ¶ ©# ¨2 ≠> ÆD ØQ ±X ≥j µq ∑y πÄ ªè ºó æû ¿∆ ¬Õ ƒı ∆¸ »$  + ÃS ŒZ –Ç “â ‘§ ’¥ ◊ƒ ŸÀ €Ê ‹ˆ ﬁ ‡ ‚( „8 ÂH ÁO Èj Íz Ïä Óë Ø Òø Ûœ ı÷ ˜Ù ¯ ˙ ¸ ˛* ˇ:JQmt	ÖåßÆ⁄·#*2 H"O$d&k(v*},ì.ö0≠1ø3∆5œ6⁄8·:˙<>A$HCIGNLP æ  ! >ˇ H 
+ ø ¿ ¿    ¡ ¡   ˇ f 
+ ø ¿ ¿ ¬ √ ¡ ¡   %¸ ˇ   
+ ø ¿ ¿ ¬   ¡ ¡   ˝  ˇ   ø ¿ ¿ ¬   ¡ ¡  *˙ ˇ  
+ ø ¿ ¿ ¬   ¡ ¡   ˇ U  ø ¿ ¿ ¬   ¡ ¡     ˇ /  ø ¿ ¿ ¬   ¡ ¡    ¸ *89)3.....11114$%"!22$+	" ƒ     ≈ 
+ ∆ «  ∫  k    † ¨† ¨† ¨† ¨ô ü ü 	#† ¨ü +ü &ü !ü ü ü ü 	 † ¨ü 'ü !ü ü ü !ü 	"† ¨	ü K
+ü Eü ?ü 9ü 3ü -ü 'ü !ü ü ü ü 	† ¨≤ ª Y∑ 6∂ ∂ 7∂ ∂ ∂ ∏ 1¨    ª   >   ë í ì î ò 4ù 6ü c• eß è¨ ëÆ ﬂ¥ ·∏ ˇπ∫ æ    ,)˚ M 
+ » …  ∫   b     /=£ *≤ ª Y∑ ∂ 78∂ ≤  .∂ 7∂ ∂ Ñßˇ◊±    ª      ¡ √ (¡ .≈ æ   	 ¸ ˙ + 
+   À  ∫  ù    ûª 9Yª :Yª Y∑ ≤ ∂ ≤ ;∂ 7<∂ ∂ ∑ =∑ >L≤ ;`≥ ;≤ ª Y∑ ?∂ ≤ ;d∂ 7@∂ ≤ )∂ 7∂ ∂ +ª Y∑ A∂ ≤ ∂ ≤ ;d∂ 7B∂ ∂ ∂ C+D∂ C+E∂ C+F∂ C+G∂ C
+=J9 H9 J9	 L9
+669≤ )`láck966≤ )`¢∑+ª Y∑ N∂ ∂ OP∂ ∂ OQ∂ )c∂ OP∂ c∂ O∂ ∂ C≤ )¢ @+ª Y∑ R∂ ≤  .∂ 7S∂ ) Toc∂ OP∂  Toc∂ O∂ ∂ C+ª Y∑ R∂ ∂ 7V∂ ) Toc∂ OP∂ c	c∂ O∂ ∂ C≤ *† 1+ª Y∑ W∂ ) Toc∂ OP∂ cc∂ O∂ ∂ C≤ († 1+ª Y∑ X∂ ) Toc∂ OP∂ cc∂ O∂ ∂ C≤ )† 1+ª Y∑ Y∂ ) Toc∂ OP∂ cc∂ O∂ ∂ C)c9Ñ† H9cg96Ñ† .+Z∂ C+[∂ C+F∂ C+G∂ C6≤ )`láck9Ñß˛E+\∂ C+]∂ C+∂ ^±    ª   ¬ 0  … *À 2Õ Zœ Ä– Ü— å“ í” ò◊ õÿ ùŸ †⁄ •€ ™‹ Øﬁ ≥‡ ∂· π„ …Â ÃÁ ŸÈÎÏYÓëÒôÚ«ıœˆ˝˘˙3˛9ˇ< BORU\	b
+hntwáÁçìôù æ   % ˇ œ  Ã  ˚ â˚ m55˚ S ƒ     ≈  Õ π  ∫   )      'º
+≥  ≥ ;±    ª   
+        Œ    œ

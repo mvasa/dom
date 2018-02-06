@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=TokenTreeNode
+comment0.text=\r\n\r\n\ @author\ chavez\r\n
+comment1.params=leftNode\ type\ rightNode
+comment1.target=TokenTreeNode(TokenTreeNode,\ char,\ TokenTreeNode)
+comment2.params=type\ negatedExpression
+comment2.target=TokenTreeNode(char,\ TokenTreeNode)
+comment3.params=type
+comment3.target=TokenTreeNode(char)
+numComments=4

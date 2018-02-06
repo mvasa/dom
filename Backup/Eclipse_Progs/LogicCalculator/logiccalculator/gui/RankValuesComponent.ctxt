@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=RankValuesComponent
+comment0.text=\r\n\r\n\ @author\ chavez\r\n
+comment1.params=endRank
+comment1.target=RankValuesComponent(int)
+comment2.params=
+comment2.target=javax.swing.JComponent[]\ getComponents()
+comment2.text=public\ JPanel\ getPanel()\ {\r\n\ \ \ \ \ \ \ \ JPanel\ pnl\ \=\ new\ JPanel(new\ GridLayout(3,\ 2,\ 10,\ 10));\r\n\ \ \ \ \ \ \ \ JLabel\ lblInit\ \=\ new\ JLabel("Initial\:");\r\n\ \ \ \ \ \ \ \ JLabel\ lblEnd\ \ \=\ new\ JLabel("Final\:");\r\n\ \ \ \ \ \ \ \ SpinnerModel\ modelInit\ \=\ new\ SpinnerNumberModel(1,\ 1,\ endRank,\ 1);\r\n\ \ \ \ \ \ \ \ txtInitRank\ \=\ new\ JSpinner(modelInit);\r\n\ \ \ \ \ \ \ \ SpinnerModel\ modelEnd\ \=\ new\ SpinnerNumberModel(1,\ endRank,\ endRank,\ 1);\r\n\ \ \ \ \ \ \ \ txtEndRank\ \ \=\ new\ JSpinner(modelEnd);\r\n\ \ \ \ \ \ \ \ this.setLayout(new\ GridLayout(2,\ 2,\ 10,\ 10));\r\n\ \ \ \ \ \ \ \ pnl.add(lblInit);\r\n\ \ \ \ \ \ \ \ pnl.add(txtInitRank);\r\n\ \ \ \ \ \ \ \ pnl.add(lblEnd);\r\n\ \ \ \ \ \ \ \ pnl.add(txtEndRank);\r\n\ \ \ \ \ \ \ \ return\ pnl;\r\n}
+numComments=3

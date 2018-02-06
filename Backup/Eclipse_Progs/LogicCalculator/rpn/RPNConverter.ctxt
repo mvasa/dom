@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=RPNConverter
+comment0.text=\r\n\r\n\ @author\ chavez\r\n
+comment1.params=expr
+comment1.target=RPNConverter(java.lang.String)
+comment2.params=
+comment2.target=boolean\ isDeduction()
+comment3.params=
+comment3.target=java.util.List\ getPremises()
+comment4.params=
+comment4.target=java.util.List\ getConclusions()
+comment5.params=
+comment5.target=java.lang.String\ process()
+comment6.params=result\ stack
+comment6.target=java.lang.String\ processParenthesis(java.lang.String,\ java.util.Stack)
+numComments=7

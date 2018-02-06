@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=InterpretationComponent
+comment0.text=\r\n\r\n\ @author\ chavez\r\n
+comment1.params=variables
+comment1.target=InterpretationComponent(java.util.List)
+comment2.params=
+comment2.target=javax.swing.JComponent[]\ getComponents2()
+comment3.params=
+comment3.target=boolean[][]\ getVariableValues2()
+comment4.params=
+comment4.target=javax.swing.JComponent[]\ getComponents()
+comment5.params=
+comment5.target=boolean[][]\ getVariableValues()
+comment6.params=ae
+comment6.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=7

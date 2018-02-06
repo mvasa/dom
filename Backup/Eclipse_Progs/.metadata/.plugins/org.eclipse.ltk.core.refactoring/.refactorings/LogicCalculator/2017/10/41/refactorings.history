@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;AtomList.java, Constants.java, Expression.java, MyKeyEventDispatcher.java, Processor.java, TruthTable.java&apos; to &apos;core&apos;" description="Move 6 resources to &apos;core&apos;" destination="core" element1="AtomList.java" element2="Constants.java" element3="Expression.java" element4="MyKeyEventDispatcher.java" element5="Processor.java" element6="TruthTable.java" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="6" stamp="1508015211900" updateReferences="true"/>
+</session>

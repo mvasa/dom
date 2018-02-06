@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=RPNEvaluator
+comment0.text=\r\n\r\n\ @author\ chavez\r\n
+comment1.params=rpnExpr\ atomsList\ truthTable\ theExpr\ mainGUI
+comment1.target=RPNEvaluator(java.lang.String,\ java.util.List,\ boolean[][],\ java.lang.String,\ logiccalculator.gui.MainGUI)
+comment2.params=interpretation
+comment2.target=boolean\ processInterpretation(boolean[])
+comment3.params=atom
+comment3.target=int\ findAtom(char)
+comment4.params=printTruthTable\ initRank\ endRank
+comment4.target=boolean[]\ process(boolean,\ int,\ int)
+comment5.params=initRank\ endRank
+comment5.target=boolean[]\ processWithDistances(int,\ int)
+comment6.params=
+comment6.target=boolean[][]\ getModelsList()
+comment7.params=
+comment7.target=int\ getNumModels()
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

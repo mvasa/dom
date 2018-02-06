@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=LogicEvalListener
+comment0.text=\r\n\r\n\ @author\ chavez\r\n
+comment1.params=
+comment1.target=void\ logicEvalstarted()
+comment2.params=
+comment2.target=void\ newInterpretation()
+comment3.params=
+comment3.target=void\ logicEvalEnded()
+numComments=4

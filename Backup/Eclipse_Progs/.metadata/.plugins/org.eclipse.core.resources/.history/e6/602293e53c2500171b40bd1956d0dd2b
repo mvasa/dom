@@ -1,0 +1,22 @@
+
+package groupw;
+
+/**
+ *
+ * @author chris_000
+ */
+public class ProgramRunner {
+
+     public static void main(String args[]) {
+        NodeMap testMap = new NodeMap(8,8);
+        testMap.print();
+        Marker testMarker = new Marker(testMap);
+        testMarker.createDistricts();
+        System.out.println();
+        testMarker.map.print();
+        System.out.println();
+        System.out.println("All the values in the map: ");
+        testMap.createRowDistricts();
+        //testMap.createColumnDistricts();
+    }
+}

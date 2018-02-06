@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=DropDownButton
+comment0.text=\r\n\r\n\ @author\ chavez\r\n
+comment1.params=text\ mainGUI
+comment1.target=DropDownButton(java.lang.String,\ MainGUI)
+comment2.params=active
+comment2.target=void\ activeDropdownAll(boolean)
+comment3.params=active
+comment3.target=void\ activeDropdown2(boolean)
+comment4.params=
+comment4.target=java.lang.String\ getName()
+numComments=5

@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Stateful
+comment0.text=A\ mutable\ object\ that\ maintains\ state.\ Three\ components\ of\ state\ include\ textual,\ numerical,\ and\ logical\ data.\r\n\ @version\ CS4250\ Fall\ 2017\ v2.4.3\r\n\ @author\ Dr.\ Jody\ Paul\ and\ Manoj\ Vasa\r\n
+comment1.params=
+comment1.target=Stateful()
+comment1.text=\r\n\ Constructs\ a\ stateful\ object\ using\ arbitrary\ values.\r\n
+comment2.params=text\ number\ truth
+comment2.target=Stateful(java.lang.String,\ java.lang.Number,\ java.lang.Boolean)
+comment2.text=\r\n\ Constructs\ a\ stateful\ object\ using\ specified\ values.\r\n\ @param\ text\ the\ textual\ data\r\n\ @param\ number\ the\ numerical\ data\r\n\ @param\ truth\ the\ logical\ data\r\n
+comment3.params=
+comment3.target=void\ flip()
+comment3.text=\r\n\ Modifies\ the\ state\ by\ inverting\ the\ logical\ value.\ If\ the\ state\ value\ was\ true,\ it\ is\ changes\ to\r\n\ false.\ If\ the\ state\ value\ was\ false,\ it\ is\ changed\ to\ true.\r\n
+comment4.params=
+comment4.target=java.lang.Number\ number()
+comment4.text=\r\n\ Accesses\ the\ numeric\ component\ of\ state.\r\n\ @return\ the\ numerical\ status\r\n
+comment5.params=
+comment5.target=java.lang.String\ text()
+comment5.text=\r\n\ Accesses\ the\ text\ component\ of\ state.\r\n\ @return\ the\ textual\ status\r\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ Renders\ object\ in\ the\ format\:\ Stateful[truth,\ number,\ "text"]\r\n
+comment7.params=
+comment7.target=java.lang.Boolean\ truth()
+comment7.text=\r\n\ Accesses\ the\ logic\ component\ of\ state.\r\n\ @return\ the\ truth\ status\r\n
+numComments=8

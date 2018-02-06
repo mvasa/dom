@@ -1,0 +1,5 @@
+test 3:
+
+do prolog programming..basic..recursive
+trace prolog given
+topics--specifying semantics

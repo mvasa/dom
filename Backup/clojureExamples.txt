@@ -1,0 +1,36 @@
+clojure examples
+
+(defn my-reverse [ x ]
+	"return he given list in reversed order"
+	(aux-reverse x () )
+)
+
+(defn aux-reverse[ x y ]
+	"return the list obtained by ... "
+	(if (= a ())
+		b
+		((aux-reverse (rest a) (cons (first a) b)
+	)
+)
+
+
+fibonacci
+
+fib(n) = 1                  if n <= 1
+	 fib(n-1)+fib(n-2)  if n >= 2
+
+(defn myfib [ n ]
+	"compute nth fibonacci number"
+	(if(<= n 1)
+		1
+		(+ (myfib ( - n 1)) (myfib (- n 2)))
+	)
+)
+
+
+
+(defn myfib2 [n table ]
+	"efficient dynamic programming version of fib"
+	(if 
+	)	
+)

@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Expression
+comment0.text=\r\n\r\n\ @author\ chavez\r\n
+comment1.params=
+comment1.target=Expression()
+comment2.params=
+comment2.target=java.lang.String\ getVisualExpression()
+comment2.text=\r\n\ @return\ the\ visualExpression\r\n
+comment3.params=visualExpression
+comment3.target=void\ setVisualExpression(java.lang.String)
+comment3.text=\r\n\ @param\ visualExpression\ the\ visualExpression\ to\ set\r\n
+comment4.params=
+comment4.target=java.lang.String\ getInternalExpression()
+comment4.text=\r\n\ @return\ the\ logicExpression\r\n
+comment5.params=internalExpression
+comment5.target=void\ setInternalExpression(java.lang.String)
+comment5.text=\r\n\ @param\ internalExpression\ the\ internalExpression\ to\ set\r\n
+comment6.params=
+comment6.target=java.lang.String\ getRPNExpression()
+comment6.text=\r\n\ @return\ the\ rpnExpression\r\n
+comment7.params=rpnExpression
+comment7.target=void\ setRPNExpression(java.lang.String)
+comment7.text=\r\n\ @param\ rpnExpression\ the\ posfixExpression\ to\ set\r\n
+comment8.params=
+comment8.target=void\ clear()
+numComments=9

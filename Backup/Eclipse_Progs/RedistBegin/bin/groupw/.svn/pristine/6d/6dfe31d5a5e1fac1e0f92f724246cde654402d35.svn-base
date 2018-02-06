@@ -1,0 +1,18 @@
+
+package groupw;
+
+/**
+ *
+ * @author chris_000
+ */
+public class ProgramRunner {
+
+     public static void main(String args[]) {
+        NodeMap testMap = new NodeMap(5,5);
+        testMap.print();
+        Marker testMarker = new Marker(testMap);
+        testMarker.createDistricts();
+        System.out.println();
+        testMarker.map.print();
+    }
+}

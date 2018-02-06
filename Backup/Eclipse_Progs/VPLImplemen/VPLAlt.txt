@@ -1,0 +1,535 @@
+
+import java.io.*;
+import java.util.*;
+
+public class VPL {
+
+    static final int max = 10000;
+    static int[] mem = new int[max];
+    static int ip, bp, sp, rv, hp, numPassed, gp;
+
+    static String[] opNames = {
+        "nop",
+        "lab",
+        "cal",
+        "pas",
+        "loc",
+        "ret",
+        "grv",
+        "jmp",
+        "cnd",
+        "add",
+        "sub",
+        "mul",
+        "div",
+        "rem",
+        "eql",
+        "neq",
+        "les",
+        "leq",
+        "and",
+        "orr",
+        "not",
+        "opp",
+        "lit",
+        "cpy",
+        "get",
+        "put",
+        "end",
+        "inp",
+        "out",
+        "nwl",
+        "sym",
+        "new",
+        "ags",
+        "ctg",
+        "cfg",};
+
+    public static int checkOpCode(String[] arr, String s) {
+        for (int i = 0; i<arr.length;i++) {
+            if (arr[i].equalsIgnoreCase(s)) {
+                return i;
+            }
+           
+        }
+        return -1;
+    }
+    
+    
+    static String fileName;
+
+    public static BufferedReader preProcess(BufferedReader input) throws Exception{
+        String line = input.readLine();
+        StringBuilder str = new StringBuilder();
+        while (line != null) {
+            Scanner sc = new Scanner(line);
+
+            while (sc.hasNext()){
+                String token = sc.next();
+                int opCode = checkOpCode(opNames,token);
+                if(opCode != -1){
+                    str.append(opCode);
+                }else {
+                    str.append(token);
+                }
+                str.append(' ');
+            }
+            str.append('\n');
+            
+            
+            line = input.readLine();
+        } 
+        return new BufferedReader(new StringReader(str.toString()));
+    }    
+    
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader keys = new BufferedReader(
+                new InputStreamReader(System.in));
+        System.out.print("enter name of file containing VPLstart program: ");
+        fileName = keys.readLine();
+        System.out.print("Replace Mnemonics with Opcodes  (Y/N): ");
+        String replaceOps = keys.readLine();
+        
+        // load the program into the front part of
+        // memory
+        BufferedReader input = new BufferedReader(new FileReader(fileName));
+        if (replaceOps.toLowerCase().charAt(0)== 'y'){
+            input = preProcess(input);
+        }
+        
+        
+        String line;
+        StringTokenizer st;
+        int opcode;
+
+        ArrayList<IntPair> labels, holes;
+        labels = new ArrayList<IntPair>();
+        holes = new ArrayList<IntPair>();
+        int label;
+
+        int k = 0;
+        do {
+            line = input.readLine();
+            System.out.println("parsing line [" + line + "]");
+            if (line != null) {// extract any tokens
+                st = new StringTokenizer(line);
+                if (st.countTokens() > 0) {// have a token, so must be an instruction (as opposed to empty line)
+
+                    opcode = Integer.parseInt(st.nextToken());
+
+                    // load the instruction into memory:
+                    if (opcode == labelCode) {// note index that comes where label would go
+                        label = Integer.parseInt(st.nextToken());
+                        labels.add(new IntPair(label, k));
+                    } else {// opcode actually gets stored
+                        mem[k] = opcode;
+                        ++k;
+
+                        if (opcode == callCode || opcode == jumpCode
+                                || opcode == condJumpCode) {// note the hole immediately after the opcode to be filled in later
+                            label = Integer.parseInt(st.nextToken());
+                            mem[k] = label;
+                            holes.add(new IntPair(k, label));
+                            ++k;
+                        }
+
+                        // load correct number of arguments (following label, if any):
+                        for (int j = 0; j < numArgs(opcode); ++j) {
+                            mem[k] = Integer.parseInt(st.nextToken());
+                            ++k;
+                        }
+
+                    }// not a label
+
+                }// have a token, so must be an instruction
+            }// have a line
+        } while (line != null);
+
+        //System.out.println("after first scan:");
+        //showMem( 0, k-1 );
+        // fill in all the holes:
+        int index;
+        for (int m = 0; m < holes.size(); ++m) {
+            label = holes.get(m).second;
+            index = -1;
+            for (int n = 0; n < labels.size(); ++n) {
+                if (labels.get(n).first == label) {
+                    index = labels.get(n).second;
+                }
+            }
+            mem[holes.get(m).first] = index;
+        }
+
+        System.out.println("after replacing labels:");
+        showMem(0, k - 1);
+
+        // initialize registers:
+        bp = k;
+        sp = k + 2;
+        ip = 0;
+        rv = -1;
+        hp = max;
+        numPassed = 0;
+
+        int codeEnd = bp - 1;
+
+        System.out.println("Code is ");
+        showMem(0, codeEnd);
+
+        gp = codeEnd + 1;
+        
+        while (true) {
+            int state = step();
+            if (state == 1) {
+                break;
+            }
+
+        }
+    }// main
+
+    public static int step() {
+        //get upcode of current instruction
+        int opcode = mem[ip];
+        // check if upcode is recognized
+        if (opcode < 0 || opcode > 34 && opcode != 42) {
+            System.out.println("Unrecognied Instruction reached : [" + opcode + "]");
+            ip++; // move to next cell
+            return -2; // unrecognized instruction
+        }
+        // Handle each specific opcode
+        if (opcode == haltCode)//26 { // halt program
+            System.out.println("Halt Reached");
+            return 1; // program competed successfully.
+        }
+        if (opcode == litCode)//22 {// store literal on stack
+            int a = mem[ip + 1]; // destination store
+            int n = mem[ip + 2]; // Literal to store
+
+            mem[bp + a] = n; // store the value 
+
+            //System.out.println("Set " + a + " to " + n);
+        }
+
+        if (opcode >= addCode && opcode <= orCode)//9-19 { //arithmetic/logic
+            int a = mem[ip + 1];// location of destination
+            int b = mem[ip + 2]; // location of op1
+            int c = mem[ip + 3]; // location of op2
+            int op1 = mem[bp + b]; // op1 value
+            int op2 = mem[bp + c]; //op2 value
+
+            int result = 0;
+                // handles specific arithmatic logic operatios
+            if (opcode == addCode) {
+                result = op1 + op2;
+            } else if (opcode == subCode) {
+                result = op1 - op2;
+            } else if (opcode == multCode) {
+                result = op1 * op2;
+            } else if (opcode == divCode) {
+                result = op1 / op2;
+            } else if (opcode == remCode) {
+                result = op1 % op2;
+            } else if (opcode == equalCode) {
+                result = (op1 == op2) ? 1 : 0;
+            } else if (opcode == notEqualCode) {
+                result = (op1 != op2) ? 1 : 0;
+            } else if (opcode == lessCode) {
+                result = (op1 < op2) ? 1 : 0;
+            } else if (opcode == lessEqualCode) {
+                result = (op1 <= op2) ? 1 : 0;
+            } else if (opcode == andCode) {
+                result = (op1 != 0 && op2 != 0) ? 1 : 0;
+            } else if (opcode == orCode) {
+                result = (op1 != 0 || op2 != 0) ? 1 : 0;
+            }
+            // store whatever result was in the stack 
+            mem[bp + a] = result;
+        }
+        if (opcode == notCode)//20 { // invert truthiness of value
+            int a = mem[ip + 1];// destinatio for storeback
+            int b = mem[ip + 2];// location of value to invert
+
+            mem[bp + a] = (mem[bp + b] != 0) ? 0 : 1;
+
+        }
+        
+        if (opcode == oppCode)//21 { // negation, flips sign of value
+            int a = mem[ip + 1];// destination for storeback
+            int b = mem[ip + 2];// locatio of the value invert
+
+            mem[bp + a] = -(mem[bp + b]);
+
+        }
+
+        if (opcode == copyCode)//23 { // copy value of one stack location to another
+            int a = mem[ip + 1];// distination for storeback
+            int b = mem[ip + 2];// location of value to coppy
+
+            mem[bp + a] = mem[bp + b];
+
+        }
+
+        if (opcode == outputCode)//28 { // output value of stack cell
+            int a = mem[ip + 1]; 
+            System.out.print(mem[bp + a]);
+        }
+
+        if (opcode == newlineCode)//29 { // output a new line
+            System.out.println();
+        }
+
+        if (opcode == symbolCode)//30 { // convert a value to a symbol, and output
+            int a = mem[ip + 1];
+            char c = (char) mem[bp + a];
+            if (c >= 32 && c <= 126) {
+                System.out.print(c);
+            }
+
+        }
+
+        if(opcode== passCode)//3{ // passes argument to next function's stack frame
+            int a = mem[ip+1]; // stack location of argument to pass
+            mem[sp+1+numPassed] = mem[bp+a]; // copy into stack frame of next func
+            numPassed++; // increment count of passed variables
+        }
+        if(opcode == callCode)//2{ // call another function
+            int loc = mem[ip+1];// location of function to call
+            int next = ip+2; // return location
+            
+            mem[sp] = next; // store return location
+            mem[sp-1] = bp; // store base pointer
+            mem[sp-2] = sp; // store stack base pointer
+            
+           numPassed = 0; // reset argument count
+           
+           bp = sp+1; // next function's stack base pointer
+           sp = bp+2+numPassed;// 3 slots for bp/sp/ip info, and space for passed arguments 
+           ip = loc; // move ip into other function
+           
+        }
+        
+        if (opcode == returnCode)//5 { // return from function
+            int a = mem[ip+1]; // stack location of the return value
+            rv = mem[bp+a]; // copy return value to rv register
+            
+            int rsp = mem[bp-3];// value to restore stack pointer
+            int rbp = mem[bp-2];// value to restore base pointer
+            int rip = mem[bp-1];// value to restore instruction pointer
+            
+            numPassed = 0; // reset argument count 
+            
+            sp = rsp; // restores stack limit/stack base/intruction pointer
+            bp = rbp; 
+            ip = rip;
+            
+            
+        }
+        
+        if (opcode == allocCode)//4{ // allocate space on stack for local variabes
+            int n = mem[ip+1]; // number of additional slots to allocate
+            sp += n; // move stack limit pointer by that number
+            
+        }
+        if (opcode == jumpCode)//7 { // jump to another instruction
+            int loc = mem[ip+1];// address of instruction to jump to 
+            ip = loc; // move instruction pointer to that location
+        }
+        
+        if (opcode == condJumpCode)//8{ // check a condiotn , jump if true
+            int loc = mem[ip+1]; // address of instruction to jump to
+            int a = mem[ip+2]; // stack location of condition to check
+            
+            if (mem[bp+a] !=0) { ip = loc;} // if true , move to new location
+            else { ip+= 3;} // otherwise, move to next instruction
+        }
+        
+        if (opcode == getRetvalCode)//6{ // retrieve value from rv register
+            int a = mem[ip+1]; // location on stack to store into
+            mem[bp+a] = rv; // copy rv register to stack
+            
+        }
+        if(opcode == inputCode)//27{ // take input from user
+            int a = mem[ip+1]; // location on stack to store user input
+            
+            while (true){ // protection against user stupidity
+                try {
+                    System.out.print("? "); // specified prompt
+                
+                    int val = new Scanner(System.in).nextInt(); // get value from user
+                    mem[bp+a] = val; // store value into stock
+                    break; 
+                }
+                catch (Exception e) {}
+            }
+        }
+        
+        if(opcode == allocGlobalCode)//32{ // allocate space for global variables
+            int n = mem[ip+1];// amount of space to allocate
+            bp += n;// adjust stack base
+            sp += n; // adjust stack limmit
+            
+        }
+        if (opcode == toGlobalCode)//33{ // copy value from stack to globa variable
+            int n = mem[ip+1]; // index of global variable
+            int a = mem[ip+2];// inde of local (stack) variable
+            mem[gp+n] = mem[bp+a]; // copy over
+            
+        }
+        if (opcode == fromGlobalCode)//34{ // copy value from global to stac variable
+            int a = mem[ip+1]; // index of local (stack) variable
+            int n = mem[ip+2]; // index of gloval variable 
+            mem[bp+a] = mem[gp+n]; // copy over
+        }
+        
+        if(opcode== newCode)//31{ // allocate heap memory
+            int a = mem[ip+1]; // cell to store heap pointer in
+            int b = mem[ip+2]; // length of block of memory
+            hp -= mem[bp+b];// moves heap pointer left 
+            mem[bp+a] =hp; // copies adjusted heap pointer into a cell
+        }
+        
+        if (opcode == putCode)//25{ // put data fro cell into heap
+            int a = mem[ip+1];// stack cell cointaing heap pointer 
+            int b = mem[ip+2];// stack stack cell containg offset
+            int c = mem[ip+3]; // cell cointaing data to store
+            
+            int p = mem[bp+a] + mem[bp+b]; // calculate location in heap to store
+            mem[p] = mem[bp+c]; //store data into heap
+            
+        }
+        
+        if (opcode == getCode)//24{ // retrieve data fro heap
+            int a = mem[ip+1]; // stack cell hold retrieved data
+            int b = mem[ip+2];// stack cell cointaining heap pointer
+            int c = mem[ip+3];// stack cell containing offset
+            
+            int p = mem[bp+b] + mem[bp+c]; // calculate location in heap to get
+            mem[bp+a]= mem[p]; // store retrieved data on stack
+        }
+        
+        if(opcode == getAddressCode)//42{ // get address of local cell
+            int a = mem[ip+1]; // stack cell hold address
+            int b = mem[ip+2]; // stack cell address to generate
+            mem[bp+a] = bp+b;// place generated address into target cell
+        }
+        
+        // if eecuting any non branch instuction
+        // move ip to next instuction
+        if (opcode != callCode && opcode != returnCode
+                && opcode != jumpCode && opcode != condJumpCode) {
+            ip += 1 + numArgs(opcode);
+        }
+
+        return 0; // No problem occured, continue execution
+    }
+
+    // use symbolic names for all opcodes:
+    // op to produce comment on a line by itself
+    private static final int noopCode = 0;
+
+    // ops involved with registers
+    private static final int labelCode = 1;
+    private static final int callCode = 2;
+    private static final int passCode = 3;
+    private static final int allocCode = 4;
+    private static final int returnCode = 5;  // return a means "return and put
+    // copy of value stored in cell a in register rv
+    private static final int getRetvalCode = 6;//op a means "copy rv into cell a"
+    private static final int jumpCode = 7;
+    private static final int condJumpCode = 8;
+
+    // arithmetic ops
+    private static final int addCode = 9;
+    private static final int subCode = 10;
+    private static final int multCode = 11;
+    private static final int divCode = 12;
+    private static final int remCode = 13;
+    private static final int equalCode = 14;
+    private static final int notEqualCode = 15;
+    private static final int lessCode = 16;
+    private static final int lessEqualCode = 17;
+    private static final int andCode = 18;
+    private static final int orCode = 19;
+    private static final int notCode = 20;
+    private static final int oppCode = 21;
+
+    // ops involving transfer of data
+    private static final int litCode = 22;  // litCode a b means "cell a gets b"
+    private static final int copyCode = 23;// copy a b means "cell a gets cell b"
+    private static final int getCode = 24; // op a b means "cell a gets
+    // contents of cell whose 
+    // index is stored in b"
+    private static final int putCode = 25;  // op a b means "put contents
+    // of cell b in cell whose offset is stored in cell a"
+
+    // system-level ops:
+    private static final int haltCode = 26;
+    private static final int inputCode = 27;
+    private static final int outputCode = 28;
+    private static final int newlineCode = 29;
+    private static final int symbolCode = 30;
+    private static final int newCode = 31;
+
+    // global variable ops:
+    private static final int allocGlobalCode = 32;
+    private static final int toGlobalCode = 33;
+    private static final int fromGlobalCode = 34;
+
+    // debug ops:
+    private static final int debugCode = 35;
+    
+    private static final int getAddressCode = 42;
+
+    // return the number of arguments after the opcode,
+    // except ops that have a label return number of arguments
+    // after the label, which always comes immediately after 
+    // the opcode
+    private static int numArgs(int opcode) {
+        // highlight specially behaving operations
+        if (opcode == labelCode) {
+            return 1;  // not used
+        } else if (opcode == jumpCode) {
+            return 0;  // jump label
+        } else if (opcode == condJumpCode) {
+            return 1;  // condJump label expr
+        } else if (opcode == callCode) {
+            return 0;  // call label
+        } // for all other ops, lump by count:
+        else if (opcode == noopCode
+                || opcode == haltCode
+                || opcode == newlineCode
+                || opcode == debugCode) {
+            return 0;  // op
+        } else if (opcode == passCode || opcode == allocCode
+                || opcode == returnCode || opcode == getRetvalCode
+                || opcode == inputCode
+                || opcode == outputCode || opcode == symbolCode
+                || opcode == allocGlobalCode) {
+            return 1;  // op arg1
+        } else if (opcode == notCode || opcode == oppCode
+                || opcode == litCode || opcode == copyCode || opcode == newCode
+                || opcode == toGlobalCode || opcode == fromGlobalCode 
+                || opcode == getAddressCode) {
+            return 2;  // op arg1 arg2
+        } else if (opcode == addCode || opcode == subCode || opcode == multCode
+                || opcode == divCode || opcode == remCode || opcode == equalCode
+                || opcode == notEqualCode || opcode == lessCode
+                || opcode == lessEqualCode || opcode == andCode
+                || opcode == orCode || opcode == getCode || opcode == putCode) {
+            return 3;
+        } else {
+            System.out.println("Fatal error: unknown opcode [" + opcode + "]");
+            System.exit(1);
+            return -1;
+        }
+
+    }// numArgs
+
+    private static void showMem(int a, int b) {
+        for (int k = a; k <= b; ++k) {
+            System.out.println(k + ": " + mem[k]);
+        }
+    }// showMem
+
+}// VPLstart

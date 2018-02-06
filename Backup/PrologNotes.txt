@@ -1,0 +1,85 @@
+4/18/2017
+..............................................................................................
+
+Prolog
+-create prolog rules (Project 4---recursion(!?!?!))
+-trace inification(?)
+
+..............................................................................................
+
+book for prolog - Learn Prolog Now___by: Patrick Blackburn, Johan Bos, and Kristina Striegnitz
+http://www.learnprolognow.org/lpnpage.php?pageid=online
+
+variables start with 
+	upper case: A
+	underscore: _
+
+atoms:   a
+	'a'
+
+Functors: <name>(<args>) 
+
+2 + 3 * 4
+
++(2,*(3,4))
+
+code:
+
+X = a.
+returns: X = a.
+
+f(x) = f(a).
+returns: x = a.
+
+x is 2+3.
+returns: x = 5.
+
+x is 2+3*4.
+returns: x = 15.
+
+x = 2+3.
+returns: x = 2+3.
+
+..................................................................................................
+
+fact(N,A) means A = N!
+
+fact(0,1).
+fact(1,1).
+
+fact(N,A) :- N1 is N-1, fact(N1,A1), A is  A1*N.
+
+running: consult('fact.pl').
+fact(3,A).
+
+use trace to look through how something is running        
+:took a pic. check phone 4/18/2017
+
+notrace and nodebug to exit this mode
+
+
+Declarative vs. procedural
+
+
+
+4/20/2017
+
+problem 5 from test 2
+(find-bigger lower items) - returned a list with all the items (in the same order) thant are bigger than lower
+
+problem5(X, Lower, Y) means:
+	Y is the items in X, in the same order, that are biger than lower
+
+//base case: if X is empty Y results to empty list
+problem5( [], Lower, []).
+problem([H|T], Lower, W) :- H =< Lower, problem5(T, Lower, W).
+problem([H|T], Lower, [H|W]) :- H > Lower, problem5(T, Lower, W).
+
+
+
+//sortNeighbors(X,Y) means:
+//	X is a list of even number of ints, Y is those same items, but sorted in pairs
+
+sortNeighbors([],[]).
+sortNeighbors([A,B|T], [B,A|W]) :- B=<A, sortNeighbors(T,W).
+sortNeighbors([A,B|T], [A,B|W]) :- B>A, sortNeighbors(T,W).

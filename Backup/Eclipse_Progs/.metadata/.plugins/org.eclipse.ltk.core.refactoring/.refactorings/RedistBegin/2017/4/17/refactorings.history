@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;&apos; to &apos;groupw.NodeMap.createColumnDistricts()&apos;&#x0D;&#x0A;- Original project: &apos;RedistBegin&apos;&#x0D;&#x0A;- Destination element: &apos;groupw.NodeMap.createColumnDistricts()&apos;&#x0D;&#x0A;- Original element: &apos;groupw.NodeMap.createColumnDistricts()&apos;" description="Copy method" destination="/src&lt;groupw{NodeMap.java[NodeMap~createColumnDistricts" element1="/src&lt;groupw{NodeMap.java[NodeMap~createColumnDistricts" flags="589830" id="org.eclipse.jdt.ui.copy" members="1" policy="org.eclipse.jdt.ui.copyMembers" stamp="1493006732567" version="1.0"/>
+</session>

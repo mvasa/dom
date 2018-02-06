@@ -1,0 +1,35 @@
+Three Envelope Game
+===================
+
+Game Setup:
+There are three envelopes, labeled A B C
+Exactly one envelope has a prize $$ (envelope was chosen randomly)
+The other two envelopes are empty
+
+Game Play:
+
+I. Player makes a choice of A, B, or C
+
+II. Host exposes one of other two envelopes as empty and discards it
+
+III. Player may:
+     (1) Keep original choice
+     (2) Switch to other (unopened) envelope
+
+Hypotheses:
+(1) Player wins significantly more often using strategy (1).
+(2) Player wins significantly more often using strategy (2).
+(3) Player wins no more or less using either strategy.
+
+
+Program Specification:
+1. Put prize in an envelope chosen at random. (Setup)
+2. Choose an envelope randomly representing player's choice. (I)
+3. Remove an envelope not chosen that is empty. (II)
+4.1. Make choice (1) to keep original -- record result. (III)
+4.2. Rerun making choice (2) to switch -- record result. (III)
+----
+Compare results of using (1) with that of using (2);
+if (1) has higher win rate, then hypothesis that (1) is best is true.
+if (2) has higher win rate, then hypothesis that (2) is best is true.
+if (1) and (2) are statistically equivalent, then hypothesis (3) is true.
