@@ -1,0 +1,34 @@
+NAME
+
+First Name: g	Last Name: g
+
+
+
+CONTACT
+
+Phone: (8) 7774445555
+
+Email: @
+
+Address:
+
+g
+
+g g
+
+87456
+
+
+
+
+RESERVATION
+
+Flight number: 7023
+
+From  : MONTREAL		To    : LONDON
+
+Date of Departure: 5/12/2020		Date of Arrival: 5/12/2020
+
+Time of Departure: 4:00PM		Time of Arrival: 11:25PM
+
+Length of Flight: 7H 25M

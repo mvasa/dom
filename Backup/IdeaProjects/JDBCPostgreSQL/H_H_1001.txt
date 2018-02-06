@@ -1,0 +1,30 @@
+NAME
+
+First Name: h	Last Name: h
+
+
+CONTACT
+
+Phone: (8) 7774445555
+Email: @
+Address: 
+h
+h h
+78456
+
+
+
+RESERVATION
+
+Flight number: 7017
+
+From  : LONDON		To    : EIDENBURGH
+
+Date of Departure: 5/10/2020		Date of Arrival: 5/10/2020
+
+Time of Departure: 1:00PM			Time of Arrival: 2:30PM
+
+Length of Flight: 1H 30M
+
+
+Hello

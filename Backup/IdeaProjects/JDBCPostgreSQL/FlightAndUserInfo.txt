@@ -1,0 +1,28 @@
+NAME
+
+First Name: m	Last Name: m
+
+
+CONTACT
+
+Phone: (8) 7774445555
+Email: m@t.com
+Address: 
+m
+m m
+87456
+
+
+
+RESERVATION
+
+Flight number: 7001
+
+From  : TORONTO		To    : NEW YORK
+
+Date of Departure: 5/5/2020		Date of Arrival: 5/5/2020
+
+Time of Departure: 8:00AM			Time of Arrival: 9:35AM
+
+Length of Flight: 1H 35M
+

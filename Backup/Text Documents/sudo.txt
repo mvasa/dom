@@ -1,0 +1,15 @@
+run autogen.sh
+make
+make install
+
+
+msinfo32
+
+apt update && apt install make ...
+
+
+
+add to REDMINE DOCUMENTATION
+
+add link to git repo
+add link to slack

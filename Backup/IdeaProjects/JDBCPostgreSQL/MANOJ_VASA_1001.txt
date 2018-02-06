@@ -1,0 +1,22 @@
+NAME
+
+First Name: Manoj	Last Name: Vasa
+
+
+
+CONTACT
+
+Phone: (8) 7745556632
+Email: mon@monday.com
+Address:street street	casod CA	87898
+
+
+
+
+RESERVATION
+
+Flight number: 7023
+From: LONDON				To: MONTREAL
+Date of Departure: 5/12/2020		Date of Arrival: 5/12/2020
+Time of Departure: 7:00AM		Time of Arrival: 2:35PM
+Length of Flight: 6H 35M
